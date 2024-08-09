@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Diamond : MonoBehaviour
 {
     public AudioClip sound;
     public Transform sparkle;
-    public GameObject timeBonusTextPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +29,6 @@ public class Diamond : MonoBehaviour
             Instantiate(sparkle, transform.position, transform.rotation);
             Destroy(gameObject);
             Destroy(sparkle, 5);
-            ShowTimeBonusText();
         }
-    }
-    private void ShowTimeBonusText()
-    {
-        GameObject textObject = Instantiate(timeBonusTextPrefab, transform.position, Quaternion.identity);
     }
 }

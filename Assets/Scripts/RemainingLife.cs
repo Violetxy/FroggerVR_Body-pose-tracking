@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +11,6 @@ public class RemainingLife : MonoBehaviour
 
     public AudioClip sound1;
 
-    L1Manager manager;
     private void Awake()
     {
         if (Instance == null)
@@ -23,7 +21,7 @@ public class RemainingLife : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
+        }   
     }
 
     // Start is called before the first frame update
@@ -44,13 +42,13 @@ public class RemainingLife : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(sound1, transform.position);
             remainingLives--;
+            UIController.Instance.ShowLifeLostMessage();
         }
 
         if (remainingLives <= 0)
         {
             remainingLives--;
-            Debug.Log("No more lives!");
-            manager.SetGameOver();
+            SetGameOverSafely();
         }
         else
         {
@@ -70,6 +68,18 @@ public class RemainingLife : MonoBehaviour
 
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
+    }
+
+    void SetGameOverSafely()
+    {
+        if (GameManager.S != null)
+        {
+            GameManager.S.SetGameOver();
+        }
+        else
+        {
+            Debug.LogError("L1Manager is not initialized.");
+        }
     }
 
 }

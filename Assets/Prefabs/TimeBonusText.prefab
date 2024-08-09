@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2009110628203576522}
   - component: {fileID: 333941999519618237}
   - component: {fileID: 2728323552452736205}
-  - component: {fileID: 5170353416701754352}
   m_Layer: 0
   m_Name: TimeBonusText
   m_TagString: Untagged
@@ -172,17 +171,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 333941999519618237}
   m_maskType: 0
---- !u!114 &5170353416701754352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847644625856755588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c329307225c89244a8ef8f3ece78785c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatSpeed: 1
-  fadeDuration: 1.5
